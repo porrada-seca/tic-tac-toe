@@ -119,10 +119,12 @@
         } */
         /* var nick = window.prompt("Jogador 1, qual é o seu nick?")
         var nick2 = window.prompt(" Jogador2, qual é o seu nick?") */
-
-        var botao = window.document.getElementById("button")
-        botao.addEventListener("click", mostrarResultado)
             
+        var inputs = window.document.getElementsByClassName("inputs")
+
+        for(var indice = 0; indice < inputs.length; indice += 1){
+            inputs[indice].addEventListener("input", mostrarResultado)
+        }
 
     </script>
 </body>
