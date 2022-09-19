@@ -108,6 +108,7 @@
             }
                 
         }
+        /*
         var simbolo;
         while(simbolo != "x" && simbolo != "o"){
            simbolo = window.prompt("Você quer x ou o?")
@@ -115,10 +116,12 @@
         }
         var nick = window.prompt("Jogador 1, qual é o seu nick?")
         var nick2 = window.prompt(" Jogador2, qual é o seu nick?")
+*/
+        var inputs = window.document.getElementsByClassName("inputs")
 
-        var botao = window.document.getElementById("button")
-        botao.addEventListener("click", mostrarVencedor)
-            
+        for(var indice = 0; indice < inputs.length; indice += 1){
+            inputs[indice].addEventListener("input", mostrarVencedor)
+        }
 
     </script>
 </body>
