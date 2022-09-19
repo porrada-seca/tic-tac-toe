@@ -49,6 +49,12 @@
         <button id="button">verificar</button>
     </div>
     <script>
+        function verificarSeDeuVelha (a1, a2, a3, b1, b2, b3, c1, c2, c3) {
+            if (a1 != "" && a2 != "" && a3 != "" && b1 != "" && b2 != "" && b3 != "" && c1 != "" && c2 != "" && c3 != "") {
+                return true
+            }
+            return false
+        }
         function verificarVencedor(a1, a2, a3, b1, b2, b3, c1, c2, c3) {
             if (a1 != "" && a1 == a2 && a1 == a3) {
                 return a1
@@ -81,11 +87,9 @@
             if (a3 != "" && a3 == b2 && a3 == c1) {
                 return a3
             }
-
-            return "Não há vencedor"
         }
 
-        function mostrarVencedor(){
+        function mostrarResultado(){
             var a1 = window.document.getElementById("a1").value
             var a2 = window.document.getElementById("a2").value
             var a3 = window.document.getElementById("a3").value
@@ -100,24 +104,24 @@
 
             console.log(vencedor)
             if(vencedor == "x" || vencedor == "o"){
-                if (vencedor != undefined){
                     window.alert(vencedor +" é o vencedor")
+            } else { 
+                if(verificarSeDeuVelha(a1, a2, a3, b1, b2, b3, c1, c2, c3)) {
+                    window.alert("Deu velha")
                 }
-            } else {
-                window.alert("Não há vencedor ou não há valor de x ou o")
-            }
+           }
                 
         }
-        var simbolo;
+        /* var simbolo;
         while(simbolo != "x" && simbolo != "o"){
            simbolo = window.prompt("Você quer x ou o?")
            console.log(simbolo)
-        }
-        var nick = window.prompt("Jogador 1, qual é o seu nick?")
-        var nick2 = window.prompt(" Jogador2, qual é o seu nick?")
+        } */
+        /* var nick = window.prompt("Jogador 1, qual é o seu nick?")
+        var nick2 = window.prompt(" Jogador2, qual é o seu nick?") */
 
         var botao = window.document.getElementById("button")
-        botao.addEventListener("click", mostrarVencedor)
+        botao.addEventListener("click", mostrarResultado)
             
 
     </script>
