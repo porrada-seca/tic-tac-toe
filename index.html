@@ -100,23 +100,12 @@
 
             console.log(vencedor)
             if(vencedor == "x" || vencedor == "o"){
-                if (vencedor != undefined){
                     window.alert(vencedor +" é o vencedor")
-                }
-            } else {
-                window.alert("Não há vencedor ou não há valor de x ou o")
             }
                 
         }
-        /*
-        var simbolo;
-        while(simbolo != "x" && simbolo != "o"){
-           simbolo = window.prompt("Você quer x ou o?")
-           console.log(simbolo)
-        }
-        var nick = window.prompt("Jogador 1, qual é o seu nick?")
-        var nick2 = window.prompt(" Jogador2, qual é o seu nick?")
-*/
+        
+        
         var inputs = window.document.getElementsByClassName("inputs")
 
         for(var indice = 0; indice < inputs.length; indice += 1){
