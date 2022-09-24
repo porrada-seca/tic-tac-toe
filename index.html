@@ -10,41 +10,23 @@
 <body>  
     <div class="conteiner">
         <div class="caixaMae">
-            <div class="item linhaCima colunaUm">
-                <input type="text" class="inputs" id="a1">
-            </div>
+            <div class="item linhaCima colunaUm"></div>
 
-            <div class="item linhaCima">
-                <input type="text" class="inputs" id="a2">
-            </div>
+            <div class="item linhaCima"></div>
 
-            <div class="item linhaCima colunaTres">
-                <input type="text" class="inputs" id="a3">
-            </div>
+            <div class="item linhaCima colunaTres"></div>
 
-            <div class="item colunaUm">
-                <input type="text" class="inputs" id="b1">
-            </div>
+            <div class="item colunaUm"></div>
 
-            <div class="item">
-                <input type="text" class="inputs" id="b2">
-            </div>
+            <div class="item"></div>
 
-            <div class="item colunaTres">
-                <input type="text" class="inputs " id="b3">
-            </div>
+            <div class="item colunaTres"></div>
 
-            <div class="item linhaBaixo colunaUm">
-                <input type="text" class="inputs" id="c1">
-            </div>
+            <div class="item linhaBaixo colunaUm"></div>
 
-            <div class="item linhaBaixo">
-                <input type="text" class="inputs" id="c2">
-            </div>
+            <div class="item linhaBaixo"></div>
 
-            <div class="item linhaBaixo colunaTres">
-                <input type="text" class="inputs " id="c3">
-            </div>
+            <div class="item linhaBaixo colunaTres"></div>
         </div>
         <button id="button">verificar</button>
     </div>
@@ -112,20 +94,34 @@
            }
                 
         }
-        /* var simbolo;
-        while(simbolo != "x" && simbolo != "o"){
+        var simbolo;
+        var simbolo2;
+       while(simbolo != "x" && simbolo != "o"){
            simbolo = window.prompt("Você quer x ou o?")
            console.log(simbolo)
-        } */
+        } 
+        if(simbolo == "x"){
+            simbolo2 = "o"
+        } else {
+            simbolo2 = "x"
+        }
         /* var nick = window.prompt("Jogador 1, qual é o seu nick?")
         var nick2 = window.prompt(" Jogador2, qual é o seu nick?") */
             
-        var inputs = window.document.getElementsByClassName("inputs")
+        var divs = window.document.getElementsByClassName("item")
 
-        for(var indice = 0; indice < inputs.length; indice += 1){
-            inputs[indice].addEventListener("input", mostrarResultado)
+        for(var indice = 0; indice < divs.length; indice += 1){
+            divs[indice].addEventListener("click", function(evento){
+                console.log(evento)
+                var p = window.document.createElement("p")
+                p.innerText = simbolo
+
+                if (evento.srcElement.firstChild == null) {
+                    evento.srcElement.appendChild(p)
+                }
+            })
         }
-
+        
     </script>
 </body>
 </html>
